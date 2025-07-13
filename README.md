@@ -1,0 +1,1 @@
+HealthSync is a user-friendly desktop health management system designed to bridge the gap between human and pet healthcare. Tailored for clinics, animal shelters, and individual users, HealthSync offers a centralized dashboard to track medical histories, manage user and pet profiles, monitor health statistics, and facilitate better care through a clean and intuitive interface.
