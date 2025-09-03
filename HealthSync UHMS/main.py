@@ -101,7 +101,7 @@ def main():
     
     # Configure main window
     root.title("🩺 HealthSync Pet & Human Health Management System")
-    root.geometry("1000x750")
+    root.geometry("999x850")
     root.configure(bg="#a3eba9")
     root.resizable(False, False)
     

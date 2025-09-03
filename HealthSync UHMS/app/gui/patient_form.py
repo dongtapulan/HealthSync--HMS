@@ -6,7 +6,7 @@ from datetime import datetime
 
 class PatientForm(tk.Frame):
     def __init__(self, master, app, username):
-        super().__init__(master, bg="#f4f9fb")
+        super().__init__(master, bg="#ecf0f1")
         self.master = master
         self.app = app
         self.username = username
@@ -15,66 +15,84 @@ class PatientForm(tk.Frame):
         self.build_ui()
 
     def build_ui(self):
+        # Header Section
+        header_frame = tk.Frame(self, bg="#2c3e50")
+        header_frame.pack(fill="x")
+
         tk.Label(
-            self,
+            header_frame,
             text="🩺 Human Symptom Checkup",
-            font=("Segoe UI", 22, "bold"),
-            bg="#f4f9fb",
-            fg="#2c3e50"
-        ).pack(pady=(30, 10))
-
-        tk.Label(
-            self,
-            text=f"Patient: {self.username}",
-            font=("Segoe UI", 12),
-            bg="#f4f9fb",
-            fg="#7f8c8d"
-        ).pack(pady=(0, 20))
-
-        tk.Label(
-            self,
-            text="Please describe your symptoms below:",
-            font=("Segoe UI", 12, "bold"),
-            bg="#f4f9fb",
-            fg="#34495e"
-        ).pack(pady=(10, 5))
-
-        self.symptom_entry = tk.Text(
-            self,
-            height=6,
-            width=70,
-            font=("Segoe UI", 11),
-            wrap="word",
-            bd=1,
-            relief="solid"
-        )
-        self.symptom_entry.pack(pady=10)
-
-        tk.Button(
-            self,
-            text="🔍 Run Symptom Checker",
-            font=("Segoe UI", 12, "bold"),
-            bg="#3498db",
-            fg="white",
-            activebackground="#2980b9",
-            width=30,
-            height=2,
-            bd=0,
-            command=self.check_symptoms
+            font=("Segoe UI", 20, "bold"),
+            bg="#2c3e50",
+            fg="white"
         ).pack(pady=20)
 
+        tk.Label(
+            header_frame,
+            text=f"Logged in as: {self.username}",
+            font=("Segoe UI", 10),
+            bg="#2c3e50",
+            fg="#bdc3c7"
+        ).pack(pady=(0, 10))
+
+        # Form Section
+        form_frame = tk.Frame(self, bg="#ecf0f1")
+        form_frame.pack(pady=30)
+
+        tk.Label(
+            form_frame,
+            text="📝 Describe your symptoms below:",
+            font=("Segoe UI", 13, "bold"),
+            bg="#ecf0f1",
+            fg="#34495e"
+        ).pack(pady=(0, 10))
+
+        self.symptom_entry = tk.Text(
+            form_frame,
+            height=7,
+            width=80,
+            font=("Segoe UI", 11),
+            wrap="word",
+            bd=2,
+            relief="groove",
+            padx=10,
+            pady=10
+        )
+        self.symptom_entry.pack(pady=(0, 20))
+
+        # Buttons Section
+        button_frame = tk.Frame(form_frame, bg="#ecf0f1")
+        button_frame.pack()
+
         tk.Button(
-            self,
-            text="🔙 Back to Dashboard",
+            button_frame,
+            text="🔍 Run Symptom Checker",
             font=("Segoe UI", 11, "bold"),
-            bg="#7f8c8d",
+            bg="#27ae60",
             fg="white",
-            activebackground="#616a6b",
-            width=25,
-            height=2,
+            activebackground="#229954",
+            padx=20,
+            pady=10,
             bd=0,
+            relief="flat",
+            width=30,
+            command=self.check_symptoms
+        ).pack(pady=(0, 10))
+
+        tk.Button(
+            button_frame,
+            text="🔙 Back to Dashboard",
+            font=("Segoe UI", 10, "bold"),
+            bg="#95a5a6",
+            fg="white",
+            activebackground="#7f8c8d",
+            padx=20,
+            pady=8,
+            bd=0,
+            relief="flat",
+            width=25,
             command=self.back_to_dashboard
-        ).pack(pady=(10, 30))
+        ).pack(pady=(0, 30))
 
     def check_symptoms(self):
         symptoms = self.symptom_entry.get("1.0", tk.END).strip()
@@ -84,10 +102,8 @@ class PatientForm(tk.Frame):
             return
 
         try:
-            # Get full prediction message (with disclaimer + diagnosis)
             diagnosis_message = self.predictor.predict(symptoms)
 
-            # Extract diagnosis from "**...**" if available
             if "**" in diagnosis_message:
                 start = diagnosis_message.find("**") + 2
                 end = diagnosis_message.find("**", start)
@@ -95,7 +111,6 @@ class PatientForm(tk.Frame):
             else:
                 diagnosis_only = "Unknown"
 
-            # Save to DB
             db_manager.save_diagnosis(
                 self.username,
                 symptoms,
@@ -103,7 +118,6 @@ class PatientForm(tk.Frame):
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             )
 
-            # Show result popup
             messagebox.showinfo("Diagnosis Result", diagnosis_message)
 
         except Exception as e:

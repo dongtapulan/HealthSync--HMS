@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1775c717078c614f18d64e26b78765f2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1775c717078c614f18d64e26b78765f2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1775c717078c614f18d64e26b78765f2 = L.map(
+                "map_1775c717078c614f18d64e26b78765f2",
+                {
+                    center: [10.3157, 123.8854],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a8ea1dfc20f647ce5d5c6feea2a391ed = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a8ea1dfc20f647ce5d5c6feea2a391ed.addTo(map_1775c717078c614f18d64e26b78765f2);
+        
+    
+            var marker_a54efaaaa30e9277ead69a963ee11e71 = L.marker(
+                [10.3111, 123.8917],
+                {
+}
+            ).addTo(map_1775c717078c614f18d64e26b78765f2);
+        
+    
+            var icon_9a77da45b639ffd8c4645ad4ff9f000e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9115d6f148d9fbfc61402b6471960bf3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad4b596bd42b2adf36b5b6b72ff6d215 = $(`<div id="html_ad4b596bd42b2adf36b5b6b72ff6d215" style="width: 100.0%; height: 100.0%;">Cebu City Health Center<br>Opens 8AM-5PM</div>`)[0];
+                popup_9115d6f148d9fbfc61402b6471960bf3.setContent(html_ad4b596bd42b2adf36b5b6b72ff6d215);
+            
+        
+
+        marker_a54efaaaa30e9277ead69a963ee11e71.bindPopup(popup_9115d6f148d9fbfc61402b6471960bf3)
+        ;
+
+        
+    
+    
+                marker_a54efaaaa30e9277ead69a963ee11e71.setIcon(icon_9a77da45b639ffd8c4645ad4ff9f000e);
+            
+    
+            var marker_84d478bd255024666fb1326c27c619fb = L.marker(
+                [10.3123, 123.8995],
+                {
+}
+            ).addTo(map_1775c717078c614f18d64e26b78765f2);
+        
+    
+            var icon_8de6434e4a70ca838d762ec940e28eec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_05c735b91dd75242f55c40efcdf9e1ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64fe392b16ee978717b670988425f738 = $(`<div id="html_64fe392b16ee978717b670988425f738" style="width: 100.0%; height: 100.0%;">Perpetual Succour Hospital<br>Emergency 24/7</div>`)[0];
+                popup_05c735b91dd75242f55c40efcdf9e1ef.setContent(html_64fe392b16ee978717b670988425f738);
+            
+        
+
+        marker_84d478bd255024666fb1326c27c619fb.bindPopup(popup_05c735b91dd75242f55c40efcdf9e1ef)
+        ;
+
+        
+    
+    
+                marker_84d478bd255024666fb1326c27c619fb.setIcon(icon_8de6434e4a70ca838d762ec940e28eec);
+            
+    
+            var marker_951b2c2f631e0030bab29c45c8ef7d99 = L.marker(
+                [10.3094, 123.8922],
+                {
+}
+            ).addTo(map_1775c717078c614f18d64e26b78765f2);
+        
+    
+            var icon_72df107b1aefa87fca0c661b0cf9774f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c214a75329955014a7f00d03ea215d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7dea8e46e3aaf5308b62a9ea798301f2 = $(`<div id="html_7dea8e46e3aaf5308b62a9ea798301f2" style="width: 100.0%; height: 100.0%;">Chong Hua Hospital<br>Cardio, OB-Gyne</div>`)[0];
+                popup_4c214a75329955014a7f00d03ea215d3.setContent(html_7dea8e46e3aaf5308b62a9ea798301f2);
+            
+        
+
+        marker_951b2c2f631e0030bab29c45c8ef7d99.bindPopup(popup_4c214a75329955014a7f00d03ea215d3)
+        ;
+
+        
+    
+    
+                marker_951b2c2f631e0030bab29c45c8ef7d99.setIcon(icon_72df107b1aefa87fca0c661b0cf9774f);
+            
+    
+            var marker_f4947332e14e1dcf588345635d6b95e7 = L.marker(
+                [10.3176, 123.9022],
+                {
+}
+            ).addTo(map_1775c717078c614f18d64e26b78765f2);
+        
+    
+            var icon_68e707b395561f5d2800e55e38030d8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef74374a6c0d7e1390bb0d0667dc6c39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1aa76c88e220c1432297abab9d1eba5 = $(`<div id="html_e1aa76c88e220c1432297abab9d1eba5" style="width: 100.0%; height: 100.0%;">Cebu Doctors' University Hospital<br>General Hospital</div>`)[0];
+                popup_ef74374a6c0d7e1390bb0d0667dc6c39.setContent(html_e1aa76c88e220c1432297abab9d1eba5);
+            
+        
+
+        marker_f4947332e14e1dcf588345635d6b95e7.bindPopup(popup_ef74374a6c0d7e1390bb0d0667dc6c39)
+        ;
+
+        
+    
+    
+                marker_f4947332e14e1dcf588345635d6b95e7.setIcon(icon_68e707b395561f5d2800e55e38030d8b);
+            
+</script>
+</html>

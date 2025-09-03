@@ -228,3 +228,5 @@ class PetForm(tk.Frame):
     def back_to_dashboard(self):
         from app.gui.pet_dashboard import PetDashboard
         self.app._switch_frame(PetDashboard, self.app, self.username)
+
+
